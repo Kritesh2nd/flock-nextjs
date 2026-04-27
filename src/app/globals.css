@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+/* :root {
+} */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@layer components {
+  .globalContainer {
+    @apply max-w-340 mx-auto px-5 md:px-8 lg:px-8 py-2;
+  }
+  .globalContainer1 {
+    @apply px-5 py-5;
+  }
+  .sidebar-header {
+    @apply text-lg font-medium text-primary;
+  }
+  .sidebar-subheading {
+    @apply text-sm text-secondary;
+  }
+  .sidebar-link {
+    @apply flex items-center gap-3 text-sm 2xl:text-base px-3 py-2 rounded-md duration-200;
+  }
+  .cell {
+    @apply text-center px-4 py-4 2xl:py-5 text-sm 2xl:text-base;
+  }
+  .modal-title {
+    @apply text-xl font-medium tracking-wide text-primary;
+  }
+  .modal-des {
+    @apply text-base text-secondary;
+  }
+  .table-row {
+    @apply border border-border bg-slate-100 rounded-lg;
+  }
+  .table-data {
+    @apply border border-border;
+  }
+  .input-range {
+    @apply flex flex-col gap-1;
+  }
+  .input-label {
+    @apply text-xs;
+  }
+  .add-btn {
+    @apply px-4 py-2 flex items-center gap-1 bg-primary text-sm 2xl:text-base text-white rounded-md cursor-pointer;
+  }
+  .form-button-save {
+    @apply bg-primary text-white px-3 text-sm 2xl:text-base py-1.5 rounded-lg cursor-pointer;
+  }
+  .form-button-cancel {
+    @apply border px-3 py-1.5 text-sm 2xl:text-base cursor-pointer rounded-lg;
+  }
+}
+
+@theme inline {
+  --color-primary: #000000;
+  --color-secondary: #6b7280;
+  --color-border: #00000021;
+  --color-red: #be0000;
+  --color-green: #1bae70;
+  --color-primary-home: #2e7d32;
+  --color-primary-text: #595959;
+}
+
+.test {
+  border: 1px solid red;
+}
+
+.border-trace {
+  position: absolute;
+  background-color: #000000; /* blue-500 */
+  width: 0;
+  height: 1px;
+  border-radius: 8px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.group:hover .border-trace {
+  animation: traceBorder 1s linear infinite;
+}
+
+@keyframes traceBorder {
+  /* TOP: left → right */
+  0% {
+    width: 0;
+    height: 1px;
+    top: 0;
+    left: 0;
+  }
+  25% {
+    width: 100%;
+  }
+
+  /* RIGHT: top → bottom */
+  26% {
+    width: 1px;
+    height: 0;
+    top: 0;
+    right: 0;
+    left: auto;
+  }
+  50% {
+    height: 100%;
+  }
+
+  /* BOTTOM: right → left */
+  51% {
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    right: 0; /* 👈 anchor from right */
+    left: auto;
+    top: auto;
+  }
+  75% {
+    width: 100%;
+  }
+
+  /* LEFT: bottom → top */
+  76% {
+    width: 1px;
+    height: 0;
+    bottom: 0; /* 👈 start from bottom */
+    left: 0;
+    top: auto;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: inset 0 0 0 1000px #ffffff !important; /* subtle white bg */
+  box-shadow: inset 0 0 0 1000px #ffffff !important; /* subtle white bg */
+  border: 1px solid #d1d5db !important; /* subtle gray border */
+  transition: background-color 5000s ease-in-out;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 4px;
+  }
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #6b7280;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.5);
+  cursor: pointer;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 30px;
+}
